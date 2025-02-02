@@ -24,8 +24,9 @@ def calculate_new_tax(income, apply_standard_deduction, tax_deductions):
         previous_slab = slab
     
     rebate = 60000 if taxable_income <= 1200000 else 0
-    final_tax = max(0, tax - rebate)
-    
+    final = max(0, tax - rebate)
+    cess = final * 0.04
+    final_tax = final + cess
     return final_tax
 
 st.subheader("Income Tax Calculator")
@@ -54,7 +55,7 @@ apply_standard_deduction = st.checkbox("Apply Standard Deduction of ₹75,000")
 
 if st.button("Calculate Tax"):
     tax = calculate_new_tax(income, apply_standard_deduction, tax_deductions)
-    st.subheader("Your Estimated Tax:")
+    st.subheader("Your Estimated Tax (With 4% CESS):")
     st.write(f"**₹ {tax:,.2f}**")
 st.markdown("</div>", unsafe_allow_html=True)
 
