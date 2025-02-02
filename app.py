@@ -28,14 +28,14 @@ def calculate_new_tax(income, apply_standard_deduction):
     
     return final_tax
 
-st.title("New Income Tax Regime Calculator")
+st.subheader("Income Tax Calculator")
 
 # Styling the main layout
 st.markdown(
     """
     <style>
         .box {
-            background-color: #f9f9f9;
+            background-color: #7C7C7C;
             padding: 5px;
             border-radius: 10px;
             box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
@@ -75,7 +75,6 @@ st.markdown("""
 A full rebate for taxable income of up to ₹12 lakhs or an amount of ₹60,000 for the taxpayers opting for the new tax regime under Section 115 BAC(1A).
 """)
 st.markdown("</div>", unsafe_allow_html=True)
-
 
 st.markdown("""
 ---
