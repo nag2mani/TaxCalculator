@@ -75,3 +75,10 @@ st.markdown("""
 A full rebate for taxable income of up to ₹12 lakhs or an amount of ₹60,000 for the taxpayers opting for the new tax regime under Section 115 BAC(1A).
 """)
 st.markdown("</div>", unsafe_allow_html=True)
+
+
+st.markdown("""
+---
+Author: Nagmani and ChatGpt.  
+Let's connect on [LinkedIn](https://www.linkedin.com/in/nag2mani/)
+""")
