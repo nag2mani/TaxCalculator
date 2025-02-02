@@ -1,8 +1,8 @@
 import streamlit as st
 
-def calculate_new_tax(income, apply_standard_deduction):
+def calculate_new_tax(income, apply_standard_deduction, tax_deductions):
     standard_deduction = 75000 if apply_standard_deduction else 0
-    taxable_income = max(0, income - standard_deduction)
+    taxable_income = max(0, income - standard_deduction - tax_deductions)
     tax = 0
     
     tax_slabs = [
@@ -49,10 +49,11 @@ st.markdown(
 # Calculator Box
 st.markdown("<div class='box'>", unsafe_allow_html=True)
 income = st.number_input("Enter Your Total Annual Income (₹):", min_value=0, value=1200000, step=10000)
+tax_deductions = st.number_input("Enter any Deductions or Exemptions (₹):", min_value=0, value=0, step=1000)
 apply_standard_deduction = st.checkbox("Apply Standard Deduction of ₹75,000")
 
 if st.button("Calculate Tax"):
-    tax = calculate_new_tax(income, apply_standard_deduction)
+    tax = calculate_new_tax(income, apply_standard_deduction, tax_deductions)
     st.subheader("Your Estimated Tax:")
     st.write(f"**₹ {tax:,.2f}**")
 st.markdown("</div>", unsafe_allow_html=True)
@@ -60,7 +61,7 @@ st.markdown("</div>", unsafe_allow_html=True)
 # Information Box
 st.markdown("<div class='box'>", unsafe_allow_html=True)
 st.subheader("Tax Slabs and Rates")
-st.markdown("""
+st.markdown(""" 
 - **0 - ₹4,00,000**: No Tax
 - **₹4,00,001 - ₹8,00,000**: 5%
 - **₹8,00,001 - ₹12,00,000**: 10%
@@ -71,13 +72,18 @@ st.markdown("""
 """)
 
 st.subheader("Tax Rebate under the New Tax Regime")
-st.markdown("""
+st.markdown(""" 
 A full rebate for taxable income of up to ₹12 lakhs or an amount of ₹60,000 for the taxpayers opting for the new tax regime under Section 115 BAC(1A).
+""")
+
+st.subheader("Tax Deductions")
+st.markdown(""" 
+Consider tax-saving instruments like life insurance premiums, PPF, EPF, tax-saving fixed deposits, and more to reduce your taxable income.
 """)
 st.markdown("</div>", unsafe_allow_html=True)
 
-st.markdown("""
----
+st.markdown(""" 
+---  
 Author: Nagmani and ChatGpt.  
 Let's connect on [LinkedIn](https://www.linkedin.com/in/nag2mani/)
 """)
