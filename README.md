@@ -26,12 +26,8 @@ This is a **Streamlit-based Income Tax Calculator** designed to help users estim
 - A **full rebate for taxable income of up to ₹12 lakhs** or an amount of **₹60,000** is available for taxpayers opting for the new tax regime under **Section 115 BAC(1A)**.
 - This means a resident individual with taxable income up to ₹12,00,000 can avail of a rebate of **100% of payable income tax**.
 
-### Old Tax Regime
-- Individuals opting for the old tax regime with a taxable income of **up to ₹5 lakh** can claim a **tax rebate of ₹12,500** under **Section 87A**.
-- The rebate will be the lower of **100% of income-tax liability or ₹12,500**.
-
 ### Important Note
-- The rebate applies **only if taxable income does not exceed ₹12 lakh (new regime) or ₹5 lakh (old regime)**.
+- The rebate applies **only if taxable income does not exceed ₹12 lakh (new regime).
 - If income exceeds the rebate limit, tax is applicable based on slab rates without rebate benefits.
 
 ## Installation and Usage
