@@ -28,7 +28,7 @@ def calculate_new_tax(income, apply_standard_deduction):
     
     return final_tax
 
-st.title("New Income Tax Regime Calculator (FY 2025-26)")
+st.title("New Income Tax Regime Calculator")
 
 # Styling the main layout
 st.markdown(
